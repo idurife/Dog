@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Dogs" max_length="40" name="x_652573_fetch_dogs" sizeclass="19" type="collection">
+        <element label="Age" max_length="40" name="age" type="integer"/>
+        <element label="Bio" max_length="4000" name="bio" type="string"/>
+        <element label="Name" max_length="1000" name="name" type="string"/>
+        <element label="Neutered" max_length="40" name="neutered" type="boolean"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Picture" max_length="40" name="picture" type="user_image"/>
+        <element choice="1" label="Raza" max_length="40" name="raza" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Labrador" sequence="0" value="labrador"/>
+                <element inactive_on_update="false" label="German Shepherd" sequence="1" value="german_shepherd"/>
+                <element inactive_on_update="false" label="Mix" sequence="2" value="mix"/>
+            </choice>
+        </element>
+        <element label="Shots" max_length="40" name="shots" type="boolean"/>
+        <element choice="1" label="Status" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Active" sequence="0" value="active"/>
+                <element inactive_on_update="false" label="Pending" sequence="1" value="pending"/>
+                <element inactive_on_update="false" label="Adopted" sequence="2" value="adopted"/>
+            </choice>
+        </element>
+        <element attributes="encode_utf8=false" label="Adoption Center" max_length="32" name="u_reference_1" reference="x_652573_fetch_adopter_center" type="reference"/>
+        <index name="index">
+            <element name="u_reference_1"/>
+        </index>
+    </element>
+</database>
